@@ -9,6 +9,7 @@ const theme = createMuiTheme({
     values: {
       xs: 0,
       sm: 600,
+      //md only value changed, previously 900, if 900 is good you can delete all the theme and ThemeProvider
       md: 768,
       lg: 1280,
       xl: 1920,

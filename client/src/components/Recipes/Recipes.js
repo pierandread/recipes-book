@@ -8,16 +8,15 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
   label: {
-    position: "absolute",
-    left: "80%",
-    top: "10%",
     transform: "rotate(45deg)"
   },
   recipe: {
-    position: "relative",
-    margin:"20px 0",
-    padding: "10px",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"
+    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
+    marginRight: "3%",
+    marginBottom: "2%",
+    "&:hover": {
+      boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"
+    }
   },
   recepies: {
     margin: "0 5%",
@@ -28,28 +27,41 @@ const useStyles = makeStyles({
   }
 });
 
-function Recipes ({recipes}) {
+function Recipes({ recipes }) {
 
   const classes = useStyles();
 
-  return(
-    <div className={classes.recepies}>
-      <Grid container={true} spacing={3}>
+  return (
+    <div >
+      <Grid container={true} spacing={3} className={classes.recepies}>
         {recipes && recipes.map((recipe, idx) =>
-          <Grid key={idx} item xs ={12} md={5} className={classes.recipe}>
+          <Grid key={idx} item xs={12} md={5} className={classes.recipe}>
             <a className={classes.link} href={recipe.href} target="_blank" rel="noopener noreferrer">
-              <img alt={recipe.title} src={recipe.thumbnail}/>
-              {(recipe.ingredients.includes("milk") || recipe.ingredients.includes("cheese")) && <Typography variant="h6" className={classes.label}>Has Lactose</Typography>}
-                <p>Name: {recipe.title}</p>
-                <p style={{marginBottom: "0"}}>Ingredients: </p>
-                <List dense={true}>
-                  {recipe.ingredients && recipe.ingredients.split(",").map((ingredient, idx) => <ListItem key={idx}>- {ingredient}</ListItem>)}
-                </List>
-              </a>
-          </Grid>         
+              <Grid spacing={1} container={true}>
+                <Grid item xs={6}>
+                  <img alt={recipe.title} src={recipe.thumbnail} />
+                </Grid>
+                <Grid item xs={6} align="right">
+                  {(recipe.ingredients.includes("milk") || recipe.ingredients.includes("cheese")) && <Typography variant="h6" className={classes.label}>Has Lactose</Typography>}
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h6">Name:</Typography>
+                  <Typography variant="body2" > {recipe.title}</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h6" >Ingredients: </Typography>
+                </Grid>
+                <Grid item xs={12} style={{paddingTop: "0"}}>
+                  <List dense={true} style={{paddingTop: "0"}}>
+                    {recipe.ingredients && recipe.ingredients.split(",").map((ingredient, idx) => <ListItem key={idx} ><Typography variant="body2">- {ingredient}</Typography></ListItem>)}
+                  </List>
+                </Grid>
+              </Grid>
+            </a>
+          </Grid>
         )}
       </Grid>
-      {(recipes && recipes.length===0) && <p>No results, try another search</p>}
+      {(recipes && recipes.length === 0) && <p>No results, try another search</p>}
     </div>
   )
 }
