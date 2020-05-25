@@ -34,15 +34,15 @@ function Recipe ({recipes}) {
 
   return(
     <div className={classes.recepies}>
-      <Grid>
+      <Grid container={true} spacing={2}>
         {recipes && recipes.map((recipe, idx) =>
-          <Grid item xs = {12}>
+          <Grid item xs ={12} md={6}>
             <Paper key={idx} className={classes.recipe}>
             <a className={classes.link} href={recipe.href} target="_blank" rel="noopener noreferrer">
               <img alt={recipe.title} src={recipe.thumbnail}></img>
               {(recipe.ingredients.includes("milk") || recipe.ingredients.includes("cheese")) && <Typography variant="h6" className={classes.label}>Has Lactose</Typography>}
                 <p>Name: {recipe.title}</p>
-                <p>Ingredients: </p>
+                <p style={{marginBottom: "0"}}>Ingredients: </p>
                 <List dense={true}>
                   {recipe.ingredients && recipe.ingredients.split(",").map((ingredient, idx) => <ListItem key={idx}>- {ingredient}</ListItem>)}
                 </List>
