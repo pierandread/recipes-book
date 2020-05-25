@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Search from './components/Search/Search';
-import Recipe from './components/Recipe/Recipe';
+import Recipes from './components/Recipes/Recipes';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -25,7 +25,7 @@ function App() {
       <NavBar/>
       <Search setRecipes={setRecipes}/>
       <ThemeProvider theme={theme}>
-       <Recipe recipes={recipes} />
+       <Recipes recipes={recipes} />
       </ThemeProvider>
     </div>
   );

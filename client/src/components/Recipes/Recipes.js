@@ -1,5 +1,4 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -18,9 +17,10 @@ const useStyles = makeStyles({
     position: "relative",
     margin:"20px 0",
     padding: "10px",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"
   },
   recepies: {
-    margin: "0 5%"
+    margin: "0 5%",
   },
   link: {
     textDecoration: "none",
@@ -28,26 +28,24 @@ const useStyles = makeStyles({
   }
 });
 
-function Recipe ({recipes}) {
+function Recipes ({recipes}) {
 
   const classes = useStyles();
 
   return(
     <div className={classes.recepies}>
-      <Grid container={true} spacing={2}>
+      <Grid container={true} spacing={3}>
         {recipes && recipes.map((recipe, idx) =>
-          <Grid item xs ={12} md={6}>
-            <Paper key={idx} className={classes.recipe}>
+          <Grid key={idx} item xs ={12} md={5} className={classes.recipe}>
             <a className={classes.link} href={recipe.href} target="_blank" rel="noopener noreferrer">
-              <img alt={recipe.title} src={recipe.thumbnail}></img>
+              <img alt={recipe.title} src={recipe.thumbnail}/>
               {(recipe.ingredients.includes("milk") || recipe.ingredients.includes("cheese")) && <Typography variant="h6" className={classes.label}>Has Lactose</Typography>}
                 <p>Name: {recipe.title}</p>
                 <p style={{marginBottom: "0"}}>Ingredients: </p>
                 <List dense={true}>
                   {recipe.ingredients && recipe.ingredients.split(",").map((ingredient, idx) => <ListItem key={idx}>- {ingredient}</ListItem>)}
                 </List>
-                </a>
-            </Paper>
+              </a>
           </Grid>         
         )}
       </Grid>
@@ -56,4 +54,4 @@ function Recipe ({recipes}) {
   )
 }
 
-export default Recipe;
+export default Recipes;
