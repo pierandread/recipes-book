@@ -29,5 +29,5 @@ export default async function getRecipies(inputs) {
     .then(res => res.json())
     .catch(error => console.log(error));
   console.log(response)
-  return response       
+  return response      
 }

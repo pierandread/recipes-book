@@ -6,13 +6,19 @@ import getRecipies from '../../services/recepypuppyCall';
 
 
 
-function Search() {
+function Search({setResults}) {
 
   const [searchInput, setSearchInput] = useState(null);
 
   const setInputs = (event) => {
     event.preventDefault(); 
     setSearchInput(event.target.value);
+  };
+
+  const callingApi = async function (inputs) {
+    let res = await getRecipies(inputs);
+    console.log(res.results);
+    setResults(res.results)
   }
 
   return(
@@ -31,9 +37,8 @@ function Search() {
           ),
         }}
         onChange = {event => setInputs(event)}
-        onKeyDown={(e) => {e.keyCode===13 && getRecipies(searchInput)}} 
-        >
-        
+        onKeyDown={(event) => {event.keyCode===13 && callingApi(searchInput)}} 
+        >        
       </TextField>
     </div>
   )
