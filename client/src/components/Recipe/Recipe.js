@@ -10,13 +10,12 @@ const useStyles = makeStyles({
     transform: "rotate(45deg)",
     display: "inline-block",
     position: "relative",
-    top: "30px",
+    top: "40px",
     left: "10px"
   },
   recipe: {
     position: "relative",
     boxShadow: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-    minWidth: "412px",
     marginRight: "2%",
     marginBottom: "2%",
     "&:hover": {
