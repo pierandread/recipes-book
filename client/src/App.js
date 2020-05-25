@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Search from './components/Search/Search';
-import Recipy from './components/Recipy/Recipy'
+import Recipe from './components/Recipe/Recipe'
 
 function App() {
 
-  const [results, setResults] = useState(null);
+  const [recipes, setRecipes] = useState(null);
 
   return (
     <div>
       <NavBar/>
-      <Search setResults={setResults}/>
-      <Recipy results={results} />
+      <Search setRecipes={setRecipes}/>
+      <Recipe recipes={recipes} />
     </div>
   );
 }

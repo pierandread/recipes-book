@@ -3,10 +3,10 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchIcon from '@material-ui/icons/Search';
 import getRecipies from '../../services/recepypuppyCall';
+import './search.css';
 
 
-
-function Search({setResults}) {
+function Search({setRecipes}) {
 
   const [searchInput, setSearchInput] = useState(null);
 
@@ -18,11 +18,11 @@ function Search({setResults}) {
   const callingApi = async function (inputs) {
     let res = await getRecipies(inputs);
     console.log(res.results);
-    setResults(res.results)
+    setRecipes(res.results)
   }
 
   return(
-    <div>
+    <div className="search">
       <TextField 
         id="search-input" 
         label="Search" 
@@ -32,7 +32,7 @@ function Search({setResults}) {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <SearchIcon />
+              <SearchIcon onClick={() => callingApi(searchInput)}/>
             </InputAdornment>
           ),
         }}
