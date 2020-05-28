@@ -20,5 +20,4 @@ test("rightInputs to return the right inputs for apicall", () => {
   expect(rightInputs(" onions, cheese")).toEqual("onions,cheese");
   expect(rightInputs(",.onions.cheese")).toEqual("onions,cheese");
   expect(rightInputs("onions,,  cheese!")).toEqual("onions,cheese");
-
 })

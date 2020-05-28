@@ -1,13 +1,6 @@
 const apiUrl = "http://www.recipepuppy.com/api/";
 const corsOriginUrl = "https://cors-anywhere.herokuapp.com/";
 
-//to test, example considered 
-  // let str1 ="onion"
-  // let str2 = ".onion garlic"
-  // let str3 = "onion, garlic"
-  // let str4 = " onion,garlic"
-  // let str5 = 2
-
 export const rightInputs = (inputs) => {
   let res =[];
   if (typeof inputs !== "string") throw new Error('Wrong type of input');
@@ -28,6 +21,5 @@ export async function getRecipies(inputs) {
   const response = await fetch(fetchUrl, {referrerPolicy: "no-referrer-when-downgrade"})
     .then(res => res.json())
     .catch(error => console.log(error));
-  console.log(response)
   return response      
 }

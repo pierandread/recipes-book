@@ -17,7 +17,6 @@ function Search({setRecipes}) {
 
   const callingApi = async function (inputs) {
     let res = await getRecipies(inputs);
-    console.log(res.results);
     setRecipes(res.results)
   }
 
