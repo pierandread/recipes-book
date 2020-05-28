@@ -13,7 +13,7 @@
 ## Screenshots
 <div align="center">
 
-**Homepage**
+**Search result**
 
 ![](./screenshoot/Searching.png)
 
