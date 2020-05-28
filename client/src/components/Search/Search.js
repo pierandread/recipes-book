@@ -2,7 +2,7 @@ import React, { useState }  from 'react';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchIcon from '@material-ui/icons/Search';
-import getRecipies from '../../services/recepypuppyCall';
+import {getRecipies} from '../../services/recepypuppyCall';
 import './search.css';
 
 

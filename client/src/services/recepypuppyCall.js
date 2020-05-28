@@ -8,7 +8,7 @@ const corsOriginUrl = "https://cors-anywhere.herokuapp.com/";
   // let str4 = " onion,garlic"
   // let str5 = 2
 
-const rightInputs = (inputs) => {
+export const rightInputs = (inputs) => {
   let res =[];
   if (typeof inputs !== "string") throw new Error('Wrong type of input');
   let inpWithoutSpecialChar = inputs.replace(/[^a-zA-Z ]/g, " ");
@@ -21,7 +21,7 @@ const rightInputs = (inputs) => {
    return res.join();
 }
 
-export default async function getRecipies(inputs) {
+export async function getRecipies(inputs) {
   inputs.length<3 && alert("Please insert more than 3 characters");
   const parameters = rightInputs(inputs);
   const fetchUrl = `${corsOriginUrl}${apiUrl}?i=${parameters}&p=1`
