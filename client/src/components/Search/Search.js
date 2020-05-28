@@ -29,11 +29,12 @@ function Search({setRecipes, setLoading}) {
         label="Search" 
         variant="outlined" 
         autoComplete="off"
+        data-testid="input-text"
         helperText="Search at least 3 characters"
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <SearchIcon onClick={() => callingApi(searchInput)}/>
+              <SearchIcon data-testid="icon" onClick={() => callingApi(searchInput)}/>
             </InputAdornment>
           ),
         }}

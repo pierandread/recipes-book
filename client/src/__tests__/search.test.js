@@ -5,17 +5,27 @@ import {getRecipies} from '../services/recepypuppyCall';
 
 
 jest.mock('../services/recepypuppyCall.js');
-const fakeApiRequest = Promise.resolve({
-  // secure_url: 'https://example.com/'
-});
+const fakeApiRequest = Promise.resolve({});
 getRecipies.mockImplementation(() => fakeApiRequest);
 
-test('renders navTitle in NavBar component', async () => {
-  const getById = queryByAttribute.bind(null, 'id');
-  const {container} = render(<Search setRecipes={{}} />);
-  const searchInput = getById(container, "search-input");
-  searchInput.value = "onions";
-  fireEvent.keyDown(searchInput, { key: 'Enter', code: 'Enter' });
-  await expect(getRecipies).toHaveBeenCalledTimes(1)
-  
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
+test('it should call getRecipes if Enter key is enter', () => {
+  const {getByLabelText, getByTestId} = render(<Search setRecipes={jest.fn()} setLoading={jest.fn()}/>);
+  const searchLabel = getByLabelText("Search")
+  fireEvent.change(searchLabel, { target: { value: 'onions' } });
+  const input = getByTestId("input-text");
+  fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', keyCode: 13, charCode: 13 } )
+  expect(getRecipies).toHaveBeenCalledTimes(1)
+});
+
+test('it should call getRecipes if icon button clicked', () => {
+  const {getByLabelText, getByTestId} = render(<Search setRecipes={jest.fn()} setLoading={jest.fn()}/>);
+  const searchLabel = getByLabelText("Search")
+  fireEvent.change(searchLabel, { target: { value: 'onions' } });
+  const icon = getByTestId("icon");
+  fireEvent.click(icon)
+  expect(getRecipies).toHaveBeenCalledTimes(1)
 });

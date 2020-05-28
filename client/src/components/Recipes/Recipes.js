@@ -13,7 +13,8 @@ const useStyles = makeStyles({
 function Recipes({ recipes, loading }) {
 
   const classes = useStyles();
-  if (loading) return(<div><p className={classes.recepies}>Loading...</p></div>)
+  if (loading) return(<div><p className={classes.recepies}>Loading...</p></div>);
+  
   return (
     <div >
       <Grid container={true} spacing={3} className={classes.recepies}>
