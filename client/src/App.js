@@ -25,7 +25,7 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <Search setRecipes={setRecipes} setLoading={setLoading}/>
+      <Search recipes={recipes} setRecipes={setRecipes} setLoading={setLoading}/>
       <ThemeProvider theme={theme}>
        <Recipes recipes={recipes} loading={loading}/>
       </ThemeProvider>

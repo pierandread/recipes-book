@@ -6,7 +6,7 @@ import {getRecipies} from '../../services/recepypuppyCall';
 import './search.css';
 
 
-function Search({setRecipes, setLoading}) {
+function Search({recipes, setRecipes, setLoading}) {
 
   const [searchInput, setSearchInput] = useState(null);
 
@@ -19,7 +19,7 @@ function Search({setRecipes, setLoading}) {
     setLoading(true)
     let res = await getRecipies(inputs);
     setLoading(false)
-    setRecipes(res.results)
+    res? setRecipes(res.results) : setRecipes(recipes);
   }
 
   return(

@@ -15,7 +15,10 @@ export const rightInputs = (inputs) => {
 }
 
 export async function getRecipies(inputs) {
-  inputs.length<3 && alert("Please insert more than 3 characters");
+  if(inputs.length<3) {
+    alert("Please insert more than 3 characters");
+  return
+  };
   const parameters = rightInputs(inputs);
   const fetchUrl = `${corsOriginUrl}${apiUrl}?i=${parameters}&p=1`
   const response = await fetch(fetchUrl, {referrerPolicy: "no-referrer-when-downgrade"})
