@@ -20,13 +20,14 @@ const theme = createMuiTheme({
 function App() {
 
   const [recipes, setRecipes] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div>
       <NavBar/>
-      <Search setRecipes={setRecipes}/>
+      <Search setRecipes={setRecipes} setLoading={setLoading}/>
       <ThemeProvider theme={theme}>
-       <Recipes recipes={recipes} />
+       <Recipes recipes={recipes} loading={loading}/>
       </ThemeProvider>
     </div>
   );
