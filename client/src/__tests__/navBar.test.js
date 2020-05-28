@@ -7,3 +7,4 @@ test('renders navTitle in NavBar component', () => {
   const navTitle = getByText(/Recepies Book/i);
   expect(navTitle).toBeInTheDocument();
 });
+
