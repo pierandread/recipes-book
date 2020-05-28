@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Recipe from '../components/Recipe/Recipe';
 
+//if you want to change fakeRecipe, please modify const ingredient1 and ingredient2 in
+// renders ingredients inside Recipe component test with value "- *newingredient*"
 const fakeRecipe = {
   href: "http://www.grouprecipes.com/2910/kahla-cooler.html",
   ingredients: "milk, onions",
