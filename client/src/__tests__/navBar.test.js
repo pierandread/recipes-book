@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar/NavBar';
 
 test('renders navTitle in NavBar component', () => {
   const { getByText } = render(<NavBar />);
-  const navTitle = getByText(/Recepies Book/i);
+  const navTitle = getByText(/Recipes Book/i);
   expect(navTitle).toBeInTheDocument();
 });
 

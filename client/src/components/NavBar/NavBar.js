@@ -24,7 +24,7 @@ function NavBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title} align="left">
-            Recepies Book
+            Recipes Book
           </Typography>
         </Toolbar>
       </AppBar>

@@ -1,4 +1,4 @@
-# Recipies-book
+# Recipes-book
 
 > A one-page website to search for recipes using the RecipePuppy API. 
 
@@ -15,7 +15,7 @@
 
 **Search result**
 
-![](./screenshoot/Searching.png)
+![](./screenshot/Searching.png)
 
 
 </div>
