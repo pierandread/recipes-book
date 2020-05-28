@@ -1,6 +1,6 @@
 # Recipies-book
 
-> A one-page website to search for recipies using the RecipePuppy API. 
+> A one-page website to search for recipes using the RecipePuppy API. 
 
 ## Implemented Features
 
@@ -52,7 +52,7 @@
 
 ## Extra thoughts and decision process
 
-Follow the [additional informations](./Additional-informations.md) file to explore more my decisional process and the structure of the application :). 
+Follow the [additional information](./Additional-information.md) file to explore more my decisional process and the structure of the application :). 
 
 
 ## Authors
