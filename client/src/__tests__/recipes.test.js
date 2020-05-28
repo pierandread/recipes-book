@@ -28,4 +28,10 @@ test('renders recipes if recipes is present', () => {
   }
 });
 
+test('renders loading... if loading state is true', () => {
+  const { getByText } = render(<Recipes loading={true} />);
+  const loadingText = getByText("Loading...");
+  expect(loadingText).toBeInTheDocument();
+});
+
 
