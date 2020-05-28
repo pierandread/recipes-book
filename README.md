@@ -10,7 +10,7 @@
 * Testing with Jest and Cypress.
 * "Has lactose" 45% angle label if ingredients contain milk and/or cheese.
 
-## Screenshots
+## Screenshot
 <div align="center">
 
 **Search result**
@@ -49,6 +49,11 @@
 * Api call to RecipePuppy is using https://cors-anywhere.herokuapp.com/ to overtake Cors, possible performance issue. 
 * More test in Cypress.
 * Cypress is calling the real API to check if it's working, if API would have a cost per call it can be expensive.
+
+## Extra thoughts and decision process
+
+Follow the [additional informations](./Additional-informations.md) file to explore more my decisional process and the structure of the application :). 
+
 
 ## Authors
 
