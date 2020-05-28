@@ -1,14 +1,14 @@
 # Recipies-book
 
-> A one-page website to search for recepies using the RecipePuppy API. 
+> A one-page website to search for recipies using the RecipePuppy API. 
 
 ## Implemented Features
 
 * Searching by ingredients limited to at least 3 characters.
 * Searching inputs is considering different case scenarios (e.g. " onions", ",.onions.cheese" etc.).
 * Grid automatically re-size from 2 columns to 1 in case the screen size is lower than 768px. 
-* Testing with Jest and Cypruss.
-* "Has lactose" 45% angle label if ingredients contains milk and/or cheese.
+* Testing with Jest and Cypress.
+* "Has lactose" 45% angle label if ingredients contain milk and/or cheese.
 
 ## Screenshots
 <div align="center">
@@ -46,9 +46,9 @@
 ## Improvements
 
 * Better graphic style for the single recipe card.
-* Api call to RecipePuppy is using https://cors-anywhere.herokuapp.com/ to overtake Cors, possible perfomance issue. 
+* Api call to RecipePuppy is using https://cors-anywhere.herokuapp.com/ to overtake Cors, possible performance issue. 
 * More test in Cypress.
-* Cypress is calling the real API to check if working, if API would have a cost per call it can be expensive.
+* Cypress is calling the real API to check if it's working, if API would have a cost per call it can be expensive.
 
 ## Authors
 
