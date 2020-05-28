@@ -17,6 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:e2e": "cypress open",
+    "test:e2e:start": "npm-run-all --parallel start cy-open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,5 +35,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "cypress": "^4.7.0",
+    "npm-run-all": "^4.1.5"
   }
 }
